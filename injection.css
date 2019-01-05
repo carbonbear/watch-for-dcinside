@@ -1,0 +1,174 @@
+<style>
+.searchFix_wrap .box_searchBlue{		/*daum search*/
+	z-index : -1 !important;
+}
+
+.tooltiptext {        
+    /*direction:rtl;  css scrollbar left */
+	overflow:auto;
+    visibility: hidden;
+	min-width: 250px;
+	min-height: 250px;
+    background-color: #555;
+    color: #fff;
+    border-radius: 6px;
+    padding: 20px 20px 20px 20px;
+    position: absolute;
+    z-index: 2147483647;
+    bottom: -1000%;
+    left: 110%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.0s;
+	white-space: pre-wrap;
+}
+
+#reloadTime{
+	 margin-bottom: 1px;
+	 height: 25px;
+    text-align: right;
+    width: 40px;
+	font-size: 13px;
+}
+
+#autoRefreshBtn{
+	margin-left: 1px;
+	overflow: hidden;
+	width: 170px;
+}
+.autoRefreshActivatedBtn{
+	overflow: hidden;
+	width: 170px !important;
+}
+.autoRefreshActivated{
+   width: 100%;
+  animation-name: refresh;
+  animation-iteration-count: infinite;
+}
+@keyframes refresh{
+	0%		{background-color : white; 
+				color : black;
+				width : 0px;
+				border: 4px solid #f00}
+				
+	100%	{background-color : #008CBA; 
+				color : white;
+				width : 170px;
+				border: 4px solid #00ff16}
+}
+#refreshBtn{
+	margin-left: 2px;
+	width: 150px;
+}
+#refreshBtn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+#refreshBtn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#refreshBtn:hover span {
+  padding-right: 25px;
+}c
+
+#refreshBtn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.tooltiptext div{
+	/*width:auto !important;*/
+}
+
+
+/* 댓글미리보기관련 */
+.tooltiptext .reply .cmt_nickbox {
+    width: 133px !important;
+    margin-right: 23px;
+}
+
+.tooltiptext .reply_box {
+    margin: 0px 0 12px 30px;
+    padding: 0px 0 0;
+    border: 1px solid #ddd;
+    background: #444; 
+    border-width: 0 1px 1px 1px;
+}
+.tooltiptext .comment_box {
+    position: relative;
+    border-top: 2px solid #525eaa;
+    background: #444;
+}
+.tooltiptext .cmt_nickbox {
+    float: left;
+    width: 132px !important;
+    margin-right: 33px;
+    margin-top: 3px;
+}
+.tooltiptext a {
+    color: #00b0ff;
+}
+.tooltiptext .comment_box .nickname {
+    color: #e2e2e2;
+}
+.tooltiptext .nickname.me {
+    background: #26aae6;
+}
+.tooltiptext #showcommentintro{
+	text-align: center;
+	border-top :  solid 1px #ddd;
+}
+
+
+.gall_tit:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+#articleinfo{
+	position: relative;
+	background-color:#333;
+	padding 50px 50px 50px 50px;
+    border-radius: 6px;
+	white-space: nowrap;
+	border-style: solid;
+	border-color:black;
+}
+.yesscroll{
+	
+}
+.noscroll { 
+	position: fixed; 
+	overflow-y:scroll;
+}
+
+.tooltiptext::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 0px rgba(0,0,0,0.3);
+	background-color: #555;
+}
+
+.tooltiptext::-webkit-scrollbar
+{
+	width: 15px;
+	background-color: #F5F5F5;
+}
+
+.tooltiptext::-webkit-scrollbar-thumb
+{
+	background-color: #0ae;
+	
+	background-image: -webkit-gradient(linear, 0 0, 0 100%,
+	                   color-stop(.5, rgba(255, 255, 255, .2)),
+					   color-stop(.5, transparent), to(transparent));
+}
+</style>

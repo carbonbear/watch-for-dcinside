@@ -1,0 +1,54 @@
+{
+  "manifest_version": 2,
+ 
+  "name": "디시 엿보기",
+  "version": "0.3.4",
+  "description": "디시인사이드 게시글, 댓글 미리보기가 가능합니다. 사용 시 cpu 사용량, 소모 데이터 양이 올라갈 수 있습니다.",
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false  
+	},
+   "browser_action": {
+    "default_icon": "icon/icon2.png",
+	"default_popup": "options.html"
+	},
+	 "permissions": [
+      "storage",
+      "webRequest",
+      "*://*.dcinside.com/*",
+      "http://*.dcinside.com/*",
+      "https://*.dcinside.com/*",
+      "*://gall.dcinside.com/*",
+      "http://gall.dcinside.com/*",
+      "https://gall.dcinside.com/*",
+	  "webRequestBlocking"
+    ],
+  "content_scripts": [
+	  {
+		"js": ["content.js", "jquery.js"],
+		"css" : ["injection.css"],
+		"pop": ["popup.js"],
+		"matches": ["http://gall.dcinside.com/board/lists*", 
+							"http://gall.dcinside.com/board/view*",
+							"http://gall.dcinside.com/mgallery/board/lists*",
+							"http://gall.dcinside.com/mgallery/board/view*",
+							"http://gall.dcinside.com/board/comment_view*",
+							"http://gall.dcinside.com/mgallery/board/comment_view*"]
+	  },
+	  {
+		"js": ["content2.js"],
+		"css" : ["injection.css"],
+		"matches": ["http://gall.dcinside.com/board/lists*", 
+							"http://gall.dcinside.com/board/view*",
+							"http://gall.dcinside.com/mgallery/board/lists*",
+							"http://gall.dcinside.com/mgallery/board/view*",
+							"http://gall.dcinside.com/board/comment_view*",
+							"http://gall.dcinside.com/mgallery/board/comment_view*",
+							"http://vr.dcinside.com/vr/*"
+							]
+	  }
+  ],
+  "background": {
+    "scripts": ["background.js"]
+	}
+}

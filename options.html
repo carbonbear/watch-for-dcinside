@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<head>
+<script src="popup.js" ></script>
+<title>디시 엿보기 옵션</title>
+        <style>
+		BODY {
+			width : 500px; 
+			min-height:100px; 
+		}
+		 button {
+			 width: 200px;
+			 outline: none;
+			 align: center;
+			background-color: #4CAF50; /* Green */
+			border: none;
+			color: white;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			margin: 4px 2px;
+			cursor: pointer;
+			border-radius: 8px;
+        }
+		.dcoption{
+			font-size : 15px;
+			text-align : right;
+		}
+		.dctitle{
+			text-align:center;
+			font-size : 20px;
+			border-bottom: solid 1px #ddd;
+		}
+		.explain{
+			position: relative;
+			display: inline-block;
+		}
+		.explain .tooltiptext {
+			visibility: hidden;
+			width: 450px;
+			background-color: black;
+			color: #fff;
+			text-align: center;
+			border-radius: 6px;
+			padding: 5px 0;
+			
+			/* Position the tooltip */
+			position: absolute;
+			z-index: 1;
+			bottom: 100%;
+			right: 10%;
+			margin-left: -60px;
+		}
+		.explain:hover .tooltiptext {
+			visibility: visible;
+		}	
+		#btn_align{
+		text-align:center;
+		border-bottom: solid 1px #ddd;
+		}
+		
+		input[type="checkbox"] {
+			-webkit-transform: scale(1.5);
+		}
+		textarea {
+			word-break: break-word;
+			width : 95%;
+			height : 150px;
+			resize: none;			
+		}
+		
+		 a:link { color: black; text-decoration: none;}
+		 a:visited { color: black; text-decoration: none;}
+		 a:hover { color: blue; text-decoration: underline;}
+
+		 
+        </style>
+
+
+</head>
+<body>
+			<div class = "dctitle">
+				디시 엿보기 옵션!
+			</div>
+			<div class = "dcoption"><br>
+					ON / OFF (체크일 때 켜짐)
+					<input type="checkbox" id="on_off"><br>
+					미리보기 시 가로 <input type="number" id="howmuch_size" min="300" max="4000" style = "text-align:right;">
+					px 이상 사진 줄이기
+					 <input type="checkbox" id="IsResize"><br>
+					 미리보기 시 최대 세로 px <input type="number" id="maxPxheight" min="600" max="4000" style = "text-align:right;">
+					 <br>
+					 
+					 미리보기 x축 조정
+					 <input type="range" id="Xcoordi" min="0" max="54" step="0.01" value = "54"><br>
+					 
+					 미리보기 시 스크롤 막기
+					 <input type="checkbox" id="scrollLock"></br>
+					 댓글 보기 옵션 켜기
+					 <input type="checkbox" id="turnOnReply"></br>
+					 차단 옵션 켜기 
+					 <input type="checkbox" id="block"><br>
+					 <div class ="blockingoption" style="text-align:right;">
+					 <textarea input type="text" id="blockitem" value="차단할 파일명" > </textarea>
+					 <br>
+					 <div class="explain"> 차단 방법 설명
+						 <span class="tooltiptext">파일명 + 공백없이 '/' + 하고싶은 메모(없어도 상관없음)<br>파일명 끼리 구분은 엔터로 합니다.<br>
+						 파일명이 길어서 자동으로 줄바꿈 되는 것은 상관없어요!<br>
+						 예) picture.png/사진 메모 <- picture.png가 차단됩니다.<br>
+						 사진.jpg     <- 사진.jpg가 차단됩니다.
+						 </span>
+					 </div>
+					 </div>
+					 
+					 <br>
+				<div id="status"></div>
+				<div id="btn_align"><button id="save">옵션 저장<br>(새로고침 해야 적용)</button><br></div>
+			</div>
+			<div class="devinfo">
+				이용해주셔서 감사합니다! <br>
+				만든이 : <a href="http://gallog.dcinside.com/bubmi">이뀨립스<img src="icon/fix_nik.gif"></a><br>
+				문의 : bubmibubmi@gmail.com 또는 갤로그 방명록<br>
+			</class>
+</body>
+<script src="options.js"></script>
+</html>
